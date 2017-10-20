@@ -1,4 +1,4 @@
-# Вопросы для собеседования на Java Junior
+# Вопросы для собеседования на Java Developer
 
 + [ООП](#ООП) ![icon][done]
 + [Java Core](#java-core) ![icon][done]
