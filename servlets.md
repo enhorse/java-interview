@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # Servlets, JSP, JSTL
 + [Что такое _«сервлет»_?](#Что-такое-сервлет)
@@ -1309,8 +1309,10 @@ Jsp-страница, по умолчанию, всегда создает се�
 
 [к оглавлению](#servlets-jsp-jstl)
 
-#Источники
+# Источники
 + [javastudy.ru](http://javastudy.ru/interview/jee-servlet-api-questions/)
 + [java2ee.ru](http://www.java2ee.ru/servlets/)
 + [Java-online](http://java-online.ru/jsp-questions.xhtml)
 + [Codenet](http://www.codenet.ru/webmast/java/jsp.php)
+
+[Вопросы для собеседования](README.md)

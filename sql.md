@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # SQL
 + [Что такое _«SQL»_?](#Что-такое-sql)
@@ -391,6 +391,8 @@ GROUP BY download_count;
 
 [к оглавлению](#sql)
 
-#Источники
+# Источники
 + [Википедия](https://ru.wikipedia.org/wiki/SQL)
 + [Quizful](http://www.quizful.net/interview/sql)
+
+[Вопросы для собеседования](README.md)

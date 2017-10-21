@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # XML
 + [Что такое _XML_?](#Что-такое-xml)
@@ -183,7 +183,9 @@ XSLT создавался для применения в _XSL (eXtensible Styles
 
 [к оглавлению](#xml)
 
-#Источники
+# Источники
 + [Википедия](https://ru.wikipedia.org/wiki/XML)
 + [CIT Forum](http://citforum.ru/internet/xnamsps/index.shtml#ns-decl)
 + [Quizful](http://www.quizful.net/interview/java/xml-and-parsers)
+
+[Вопросы для собеседования](README.md)

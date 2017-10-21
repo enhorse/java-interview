@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # JDBC
 + [Что такое _JDBC_?](#Что-такое-jdbc)
@@ -270,8 +270,10 @@ public vois runStoredProcedure(final Connection connection) throws Exception {
 
 [к оглавлению](#jdbc)
 
-#Источники
+# Источники
 + [Википедия - JDBC](https://ru.wikipedia.org/wiki/Java_Database_Connectivity)
 + [IBM developerWorks®](http://www.ibm.com/developerworks/ru/library/dm-1209storedprocedures/)
 + [Документация к пакету java.sql](https://docs.oracle.com/javase/7/docs/api/java/sql/package-summary.html)
 + [Википедия - Уровень изолированности транзакции](https://ru.wikipedia.org/wiki/Уровень_изолированности_транзакций)
+
+[Вопросы для собеседования](README.md)

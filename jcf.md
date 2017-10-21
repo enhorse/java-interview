@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # Java Collections Framework
 + [Что такое _«коллекция»_?](#Что-такое-коллекция)
@@ -776,9 +776,11 @@ for (Map.Entry<K, V> entry : set) {
 
 [к оглавлению](#java-collections-framework)
 
-#Источник
+# Источник
 + [parshinpn.pro](http://www.parshinpn.pro/content/voprosy-i-otvety-na-sobesedovanii-po-teme-java-collection-framework-chast-1)
 + [Хабрахабр](https://habrahabr.ru/post/162017/)
 + [Quizful](http://www.quizful.net/interview/java)
 + [JavaRush](http://info.javarush.ru/)
 + [Хабрахабр:Справочник по Java Collections Framework](https://habrahabr.ru/post/237043/)
+
+[Вопросы для собеседования](README.md)

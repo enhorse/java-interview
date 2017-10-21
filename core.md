@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Developer](README.md)
+[Вопросы для собеседования](README.md)
 
 # Java Core
 + [Чем различаются JRE, JVM и JDK?](#Чем-различаются-jre-jvm-и-jdk)
@@ -1225,10 +1225,12 @@ __Локализация (localization)__ -  адаптация интерфей
 
 [к оглавлению](#java-core)
 
-#Источники
+# Источники
 + [Quizful](http://www.quizful.net/interview/java/)
 + [JavaStudy.ru](http://javastudy.ru/interview/java-oop2/)
 + [ggenikus.github.io](https://ggenikus.github.io/blog/2014/05/04/gc/)
 + [Санкт-Петербургская группа тестирования JVM](https://blogs.oracle.com/vmrobot/entry/основы_сборки_мусора_в_hotspot)
 + [Объектно-ориентированное программирование](http://oop-java.blogspot.ru/2006/02/blog-post_21.html)
 + [JavaRush](http://info.javarush.ru/)
+
+[Вопросы для собеседования](README.md)

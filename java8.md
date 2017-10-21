@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # Java 8
 + [Какие нововведения, появились в Java 8 и JDK 8?](#Какие-нововведения-появились-в-java-8-и-jdk-8)
@@ -917,8 +917,10 @@ new String(Base64.getDecoder().decode("aW5wdXQ=="), "utf-8"); //input
 
 [к оглавлению](#java-8)
 
-#Источники
+# Источники
 + [Хабрахабр - Новое в Java 8](https://habrahabr.ru/post/216431/)
 + [Хабрахабр - Шпаргалка Java программиста 4. Java Stream API](https://habrahabr.ru/company/luxoft/blog/270383/)
 + [METANIT.COM](http://metanit.com/java/tutorial/9.1.php)
 + [javadevblog.com](http://javadevblog.com/interfejsy-v-java-8-staticheskie-metody-metody-po-umolchaniyu-funktsional-ny-e-interfejsy.html)
+
+[Вопросы для собеседования](README.md)

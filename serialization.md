@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # Сериализация
 + [Что такое _«сериализация»_?](#Что-такое-сериализация)
@@ -148,10 +148,11 @@ public class Person implements java.io.Serializable,
 
 [к оглавлению](#Сериализация)
 
-
-#Источники
+# Источники
 + [IBM developerWorks](https://www.ibm.com/developerworks/ru/library/j-5things1/)
 + [Java-online.ru](http://java-online.ru/blog-serialization.xhtml)
 + [Изучите секреты Java Serialization API](http://ccfit.nsu.ru/~deviv/courses/oop/java_ser_rus.html)
 + [JavaRush](http://bit.ly/1xwRA2D)
 + [Записки трезвого практика](http://www.skipy.ru/technics/serialization.html)
+
+[Вопросы для собеседования](README.md)

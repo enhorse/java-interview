@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # Многопоточность
 + [Расскажите о модели памяти Java?](#Расскажите-о-модели-памяти-java)
@@ -1104,7 +1104,7 @@ class QueueReentrantLock<T> {
 
 [к оглавлению](#Многопоточность)
 
-#Источники
+# Источники
 + [Хабрахабр - Многопоточность в Java](https://habrahabr.ru/post/164487/)
 + [IBM DeveloperWorks - Выполнение задач в многопоточном режиме](https://www.ibm.com/developerworks/ru/library/l-java_universe_multithreading_tasks/)
 + [Записки трезвого практика](http://www.skipy.ru/technics/synchronization.html)
@@ -1115,3 +1115,5 @@ class QueueReentrantLock<T> {
 + [IBM DeveloperWorks - Более гибкая, масштабируемая блокировка в JDK 5.0](http://www.ibm.com/developerworks/ru/library/j-jtp10264/)
 + [Хабрахабр - Правильный Singleton в Java](https://habrahabr.ru/post/129494/)
 + [duct-tape-architect.ru](http://www.duct-tape-architect.ru/?p=294#3__171_187___Java_HotSpot_JVM6)
+
+[Вопросы для собеседования](README.md)

@@ -1,4 +1,4 @@
-[Вопросы для собеседования на Java Junior](README.md)
+[Вопросы для собеседования](README.md)
 
 # Основы CSS
 + [Что такое _«CSS»_?](#Что-такое-css)
@@ -146,8 +146,9 @@ p {
 
 [к оглавлению](#Основы-css)
 
-#Источники
+# Источники
 + [myway-blog.ru](http://myway-blog.ru/interview-frontend-web-programmer/)
 + [htmlbook.ru](http://stepbystep.htmlbook.ru/?id=43)
 + [itchief.ru](https://itchief.ru/lessons/html-and-css/css-selectors)
 
+[Вопросы для собеседования](README.md)
