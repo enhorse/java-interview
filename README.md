@@ -357,6 +357,7 @@
 ## Многопоточность
 + [Расскажите о модели памяти Java?](concurrency.md#Расскажите-о-модели-памяти-java)
 + [Что такое «потокобезопасность»?](concurrency.md#Что-такое-потокобезопасность)
++ [В чём разница между _«конкуренцией»_ и _«параллелизмом»_?](concurrency.#В-чём-разница-между-конкуренцией-и-параллелизмом)
 + [Что такое _«кооперативная многозадачность»_? Какой тип многозадачности использует Java? Чем обусловлен этот выбор?](concurrency.md#Что-такое-кооперативная-многозадачность-Какой-тип-многозадачности-использует-java-Чем-обусловлен-этот-выбор)
 + [Что такое _ordering_, _as-if-serial semantics_, _sequential consistency_, _visibility_, _atomicity_, _happens-before_, _mutual exclusion_, _safe publication_?](concurrency.md#Что-такое-ordering-as-if-serial-semantics-sequential-consistency-visibility-atomicity-happens-before-mutual-exclusion-safe-publication)
 + [Чем отличается процесс от потока?](concurrency.md#Чем-отличается-процесс-от-потока)
