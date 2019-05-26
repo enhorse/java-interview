@@ -611,7 +611,7 @@ Stream
 ```java
 Stream
     .of("H e l l o", "w o r l d !")
-    .flatMap((p) -> Arrays.stream(p.split(",")))
+    .flatMap((p) -> Arrays.stream(p.split(" ")))
     .toArray(String[]::new);//["H", "e", "l", "l", "o", "w", "o", "r", "l", "d", "!"]
 ```
 
