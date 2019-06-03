@@ -732,6 +732,7 @@
 ## Дополнительные материалы
 + [4 толковых канала на Youtube про технические собеседования](https://habr.com/ru/post/454264/)
 + [A list of fancy questions I've been asked during the interviews I had](https://github.com/d1mnewz/interviews)
++ [Job interview in English: как готовиться и что отвечать](https://dou.ua/lenta/articles/interview-in-english/)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
