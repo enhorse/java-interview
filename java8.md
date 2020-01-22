@@ -235,7 +235,7 @@ public static void main(String[] args) {
 [к оглавлению](#java-8)
 
 ## Объясните выражение `System.out::println`.
-Заданное выражение иллюстрирует передачу ссылки на статический метод `println()` класса `System.out`.
+Данное выражение иллюстрирует механизм _instance method reference_: передачи ссылки на метод `println()` статического поля `out` класса `System`.
 
 [к оглавлению](#java-8)
 
