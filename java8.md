@@ -714,7 +714,6 @@ Stream
     .of(1, 2, 3, 2, 1)
     .map(s -> s * s)
     .distinct()
-    .collect(Collectors.toList())
     .forEach(System.out::println);
 ```
 
