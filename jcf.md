@@ -317,8 +317,6 @@ _O(N)_. Вставка элемента в конец списка осущес�
 Пример:
 
 ```java
-package test1;
-
 import java.io.*;
 import java.util.ArrayList;
 
@@ -335,8 +333,9 @@ public class Main {
     public static void main(String[] args){
         
         initList = new ArrayList<>(size);
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) {
             initList.add(i);
+        }
         System.out.println("Список из 1.000.000 элементов заполнен");
         
         copyList = new ArrayList<>(initList);
@@ -354,8 +353,9 @@ public class Main {
         System.out.println("\nВыполняем удаление вызовом remove()...");
         long start = System.currentTimeMillis();
         
-        for (int i = m - 1; i < m + n - 1; i++)
+        for (int i = m - 1; i < m + n - 1; i++) {
             initList.remove(i);
+        }
         
         long finish = System.currentTimeMillis() - start;
         System.out.println("Время удаления с помощью вызова remove(): " + finish);
@@ -383,8 +383,9 @@ public class Main {
             }
         } else{
             //переменная k необходима для отсчёта сдвига начиная от места вставка m
-            for (int i  = m + n, k = 0; i < size; i++, k++)
+            for (int i  = m + n, k = 0; i < size; i++, k++) {
                copyList.set(m + k, copyList.get(i));
+            }
             
             /* удаляем ненужные элементы в конце списка
              * удаляется всегда последний элемент, так как время этого действия
