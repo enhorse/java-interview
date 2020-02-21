@@ -543,10 +543,8 @@ import java.util.Map;
 public class Q2 {
 
     public static void main(String[] args) {
-
         Q2 q = new Q2();
         q.testHashMapAndIdentityHashMap();
-
     }
 
     private void testHashMapAndIdentityHashMap() {
