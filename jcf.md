@@ -644,6 +644,26 @@ class CreditCard {
 }
 ```
 
+Результат выполнения кода:
+```
+adding to HM
+hashCode = 1285631513
+adding to IHM
+before modifying keys
+hashCode = 1285631513
+Does VISA card exists in HashMap? Yes
+Does VISA card exists in IdenityHashMap? Yes
+after modifying keys
+hashCode = 791156485
+Does VISA card exists in HashMap? No
+Does VISA card exists in IdenityHashMap? Yes
+cardToExpiry.containsKey
+hashCode = 791156485
+false
+cardToExpiryIdenity.containsKey
+true
+```
+
 [к оглавлению](#java-collections-framework)
 
 ## В чем разница между `HashMap` и `WeakHashMap`? Для чего используется `WeakHashMap`?
