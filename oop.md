@@ -273,6 +273,42 @@ _Абстрагирование_ – это способ выделить наб
 
 >Представьте, что водитель едет в автомобиле по оживлённому участку движения. Понятно, что в этот момент он не будет задумываться о химическом составе краски автомобиля, особенностях взаимодействия шестерёнок в коробке передач или влияния формы кузова на скорость (разве что, автомобиль стоит в глухой пробке и водителю абсолютно нечем заняться). Однако, руль, педали, указатель поворота он будет использовать регулярно.
 
+Пример:
+```java
+// Abstract class
+abstract class Animal {
+    // Abstract method (does not have a body)
+    public abstract void animalSound();
+
+    // Regular method
+    public void sleep() {
+        System.out.println("Zzz");
+    }
+}
+
+// Subclass (inherit from Animal)
+class Pig extends Animal {
+    public void animalSound() {
+        // The body of animalSound() is provided here
+        System.out.println("The pig says: wee wee");
+    }
+}
+
+class MyMainClass {
+    public static void main(String[] args) {
+        Pig myPig = new Pig(); // Create a Pig object
+        myPig.animalSound();
+        myPig.sleep();
+    }
+}
+```
+
+```java
+```
+
+```java
+```
+
 [к оглавлению](#ООП)
 
 ## Что представляет собой _«обмен сообщениями»_?
