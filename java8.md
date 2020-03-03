@@ -143,7 +143,7 @@ public static void main(String[] args) {
     Printable printer = s -> System.out.println(s);
     printer.print("Hello, world");
 }
-```java
+```
 
 + _Блочные лямбда-выражения_ обрамляются фигурными скобками. В блочных лямбда-выражениях можно использовать внутренние вложенные блоки, циклы, конструкции `if`, `switch`, создавать переменные и т.д. Если блочное лямбда-выражение должно возвращать значение, то явным образом применяется оператор `return`:
 
@@ -714,7 +714,6 @@ Stream
     .of(1, 2, 3, 2, 1)
     .map(s -> s * s)
     .distinct()
-    .collect(Collectors.toList())
     .forEach(System.out::println);
 ```
 
