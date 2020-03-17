@@ -459,6 +459,52 @@ super.method();
 
 В отличии от статических, поля экземпляра класса принадлежат конкретному объекту и могут иметь разные значения для каждого. Вызов метода экземпляра возможен только после предварительного создания объекта класса.
 
+Пример:
+```java
+public class MainClass {
+
+	public static void main(String args[]) {
+		System.out.println(TestClass.v);
+		new TestClass().a();
+		System.out.println(TestClass.v);
+	}
+
+}
+```
+
+```java
+public class TestClass {
+
+	public static String v = "Initial val";
+
+	{
+		System.out.println("!!! Non-static initializer");
+		v = "Val from non-static";
+	}
+
+	static {
+		System.out.println("!!! Static initializer");
+		v = "Some val";
+	}
+
+	public void a() {
+		System.out.println("!!! a() called");
+	}
+
+}
+```
+
+Результат:
+
+```
+!!! Static initializer
+Some val
+!!! Non-static initializer
+!!! a() called
+Val from non-static
+
+```
+
 [к оглавлению](#java-core)
 
 ## Где разрешена инициализация статических/нестатических полей?
