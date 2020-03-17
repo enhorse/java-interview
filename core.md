@@ -285,6 +285,88 @@ int fieldValue = (int) field.get(victim);
 >
 > → Grandchild non-static block(s) → Grandchild constructor
 
+Пример 1:
+
+```java
+public class MainClass {
+
+    public static void main(String args[]) {
+        System.out.println(TestClass.v);
+        new TestClass().a();
+    }
+
+}
+```
+
+```java
+public class TestClass {
+
+    public static String v = "Some val";
+
+    {
+        System.out.println("!!! Non-static initializer");
+    }
+
+    static {
+        System.out.println("!!! Static initializer");
+    }
+
+    public void a() {
+        System.out.println("!!! a() called");
+    }
+
+}
+```
+
+Результат выполнения:
+
+```
+!!! Static initializer
+Some val
+!!! Non-static initializer
+!!! a() called
+```
+
+Пример 2:
+
+```java
+public class MainClass {
+
+    public static void main(String args[]) {        
+        new TestClass().a();
+    }
+
+}
+```
+
+```java
+public class TestClass {
+
+    public static String v = "Some val";
+
+    {
+        System.out.println("!!! Non-static initializer");
+    }
+
+    static {
+        System.out.println("!!! Static initializer");
+    }
+
+    public void a() {
+        System.out.println("!!! a() called");
+    }
+
+}
+```
+
+Результат выполнения:
+
+```
+!!! Static initializer
+!!! Non-static initializer
+!!! a() called
+```
+
 [к оглавлению](#java-core)
 
 ## Зачем нужны и какие бывают блоки инициализации?
