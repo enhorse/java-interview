@@ -1,5 +1,4 @@
-# Свёрстанные вопросы и ответы под печать
-+ book/Java_questions.pdf
+[Свёрстанные вопросы и ответы](book/Java_questions.pdf) [by Victoria Demidova](https://github.com/VictoriaDemidova)
 
 # Вопросы для собеседования на Java Developer
 
