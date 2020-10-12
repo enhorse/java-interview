@@ -26,7 +26,7 @@
         <maven.compiler.useIncrementalCompilation>false</maven.compiler.useIncrementalCompilation>
         <checkstyle.config>src/main/resources/google_checkstyle.xml</checkstyle.config>
 
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mockito.version>2.5.0</mockito.version>
         <log4j.version>1.7.22</log4j.version>
     </properties>
