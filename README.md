@@ -752,6 +752,7 @@
 + [What to ask an interviewer during a tech interview](https://hackernoon.com/what-to-ask-an-interviewer-during-a-tech-interview-865a293e548c)
 + [Spring Boot Interview Questions](https://www.baeldung.com/spring-boot-interview-questions)
 + [Top Spring Framework Interview Questions](https://www.baeldung.com/spring-interview-questions)
++ [Spring Interview Questions](https://www.interviewbit.com/spring-interview-questions/)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
