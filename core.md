@@ -426,6 +426,39 @@ public class TestClass {
 [к оглавлению](#java-core)
 
 ## Можно ли сузить уровень доступа/тип возвращаемого значения при переопределении метода?
+
++ При переопределении метода нельзя сузить модификатор доступа к методу (например с public в MainClass до private в Class extends MainClass). 
++ Изменить тип возвращаемого значения при переопределении метода нельзя, будет ошибка attempting to use incompatible return type. 
++ Можно сузить возвращаемое значение, если они совместимы. 
+
+Например:
+
+```java
+public class Animal {
+
+    public Animal eat() {
+        System.out.println("animal eat");
+        return null;
+    }
+    
+    public Long calc() {
+        return null;
+    }
+
+}
+public class Dog extends Animal {
+
+    public Dog eat() {
+        return new Dog();
+    }
+/*attempting to use incompatible return type
+    public Integer calc() {
+        return null;
+    }
+*/
+}
+```
+
 ## Возможно ли при переопределении метода изменить: модификатор доступа, возвращаемый тип, тип аргумента или их количество, имена аргументов или их порядок; убирать, добавлять, изменять порядок следования элементов секции `throws`?
 При переопределении метода сужать модификатор доступа не разрешается, т.к. это приведёт к нарушению принципа подстановки Барбары Лисков. Расширение уровня доступа возможно.
 
