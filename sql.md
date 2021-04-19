@@ -333,13 +333,175 @@ __Курсор__ — это объект базы данных, который �
 ## Расскажите об основных функциях ранжирования в Transact-SQL.
 Ранжирующие функции - это функции, которые возвращают значение для каждой записи группы в результирующем наборе данных. На практике они могут быть использованы, например, для простой нумерации списка, составления рейтинга или постраничной навигации.
 
+К примеру, у нас имеется набор данных следующего вида:
+
+![ ](images/SQL/image.png)
+
 `ROW_NUMBER` – функция нумерации в Transact-SQL, которая возвращает просто номер записи.
+
+Например, запрос 
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       ROW_NUMBER() OVER(ORDER BY Marks) RowNumber
+FROM ExamResult;
+```
+Вернёт набор данных следующего вида:
+
+![ ](images/SQL/row_number-sql-rank-function.png)
+
+А запрос вида
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       ROW_NUMBER() OVER(ORDER BY Marks desc) RowNumber
+FROM ExamResult;
+```
+
+Вернёт набор
+
+![ ](images/SQL/row_number-example.png)
+
 
 `RANK` возвращает ранг каждой записи. В данном случае, в отличие от `ROW_NUMBER`, идет уже анализ значений и в случае нахождения одинаковых возвращает одинаковый ранг с пропуском следующего.
 
+Например:
+
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       RANK() OVER(PARTITION BY Studentname ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY Studentname, 
+         Rank;
+```
+
+Результат:
+
+![ ](images/SQL/ranksql-rank-function.png)
+
+Ещё пример:
+
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       RANK() OVER(ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY Rank;
+```
+
+Результат:
+
+![ ](images/SQL/output-of-rank-function-for-similar-values.png)
+
+
 `DENSE_RANK` так же возвращает ранг каждой записи, но в отличие от `RANK` в случае нахождения одинаковых значений возвращает ранг без пропуска следующего.
 
+Например:
+
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       DENSE_RANK() OVER(ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY Rank;
+```
+
+Результат:
+
+![ ](images/SQL/dense_ranksql-rank-function.png)
+
+Ещё пример:
+
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       DENSE_RANK() OVER(PARTITION BY Subject ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY Studentname, 
+         Rank;
+```
+
+Результат:
+
+![ ](images/SQL/output-of-dense_rank-function.png)
+
+Ну, и на последок, продемонстрируем разницу между `DENSE_RANK` и `RANK`:
+
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       RANK() OVER(PARTITION BY StudentName ORDER BY Marks ) Rank
+FROM ExamResult
+ORDER BY Studentname, 
+         Rank;
+```
+
+
+```sql
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       DENSE_RANK() OVER(PARTITION BY StudentName ORDER BY Marks ) Rank
+FROM ExamResult
+ORDER BY Studentname, 
+         Rank;
+```
+
+![ ](images/SQL/difference-between-rank-and-dense_rank.png)
+
+![ ](images/SQL/difference-between-rank-and-dense_rank-functio.png)
+
+
 `NTILE` – функция Transact-SQL, которая делит результирующий набор на группы по определенному столбцу. 
+
+Например:
+
+```sql
+SELECT *, 
+       NTILE(2) OVER(
+       ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY rank;
+```
+
+Результат:
+
+![ ](images/SQL/ntilen-sql-rank-function.png)
+
+Пример 2:
+
+```sql
+SELECT *, 
+       NTILE(3) OVER(
+       ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY rank;
+```
+
+Результат:
+
+![ ](images/SQL/ntilen-function-with-partition.png)
+
+Пример 3:
+
+```sql
+SELECT *, 
+       NTILE(2) OVER(PARTITION  BY subject ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY subject, rank;
+```
+
+Результат:
+
+![ ](images/SQL/output-of-ntilen-function-with-partition.png)
 
 [к оглавлению](#sql)
 
@@ -396,3 +558,4 @@ GROUP BY download_count;
 + [Quizful](http://www.quizful.net/interview/sql)
 
 [Вопросы для собеседования](README.md)
+
