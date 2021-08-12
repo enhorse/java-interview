@@ -812,7 +812,7 @@ __busy spin__ – это техника, которую программисты
 class NonBlockingStack<T> {
     private final AtomicReference<Element> head = new AtomicReference<>(null);
 
-    Stack<T> push(final T value) {
+    NonBlockingStack<T> push(final T value) {
         final Element current = new Element();
         current.value = value;
         Element recent;
