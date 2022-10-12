@@ -753,6 +753,7 @@
 + [Spring Boot Interview Questions](https://www.baeldung.com/spring-boot-interview-questions)
 + [Top Spring Framework Interview Questions](https://www.baeldung.com/spring-interview-questions)
 + [Spring Interview Questions](https://www.interviewbit.com/spring-interview-questions/)
++ https://www.youtube.com/watch?v=_K3oLydMkNc
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
