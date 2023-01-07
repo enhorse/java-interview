@@ -50,11 +50,11 @@ __Инкапсуляция__ – это свойство системы, поз�
 
 Пример:
 ```java
-public class SomePhone {
+public class AbstractPhone {
 
     private int year;
     private String company;
-    public SomePhone(int year, String company) {
+    public AbstractPhone (int year, String company) {
         this.year = year;
         this.company = company;
     }
