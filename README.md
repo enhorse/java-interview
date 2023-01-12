@@ -753,6 +753,7 @@
 + [Spring Boot Interview Questions](https://www.baeldung.com/spring-boot-interview-questions)
 + [Top Spring Framework Interview Questions](https://www.baeldung.com/spring-interview-questions)
 + [Spring Interview Questions](https://www.interviewbit.com/spring-interview-questions/)
++ [Hibernate Interview Questions](https://www.adaface.com/blog/hibernate-interview-questions/)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
