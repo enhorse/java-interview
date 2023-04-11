@@ -908,7 +908,7 @@ class NonBlockingArrayList<T> {
             if (item == null) {
                 needsModification = content[index] != null;
             } else {
-                needsModification = item.equals(content[index]);
+                needsModification = !item.equals(content[index]);
             }
         }
         if (needsModification) {
