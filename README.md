@@ -759,3 +759,5 @@
 
 ## Источники
 + [Вопросы на собеседование Junior Java Developer](https://jsehelper.blogspot.ru)
+
+asdfasdf
