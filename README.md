@@ -25,6 +25,7 @@
 + [Основы CSS](#Основы-css) ![icon][done]
 + [Основы Web](#Основы-web) ![icon][done]
 + [Дополнительные материалы](#Дополнительные-материалы) ![icon][done]
++ [Apache Kafka](#apache-kafka) ![icon][done]
 
 [done]:done.png
 
@@ -770,6 +771,14 @@
 + [Top Spring Framework Interview Questions](https://www.baeldung.com/spring-interview-questions)
 + [Spring Interview Questions](https://www.interviewbit.com/spring-interview-questions/)
 + [Hibernate Interview Questions](https://www.adaface.com/blog/hibernate-interview-questions/)
+
+[к оглавлению](#Вопросы-для-собеседования-на-java-developer)
+
+## Apache Kafka
+
+* [Что такое Apache Kafka?](kafka.md#что-такое-apache-kafka)
+* [Основные компоненты Kafka](kafka.md#основные-компоненты-kafka)
+* [Архитектура топика](kafka.md#архитектура-топика)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
