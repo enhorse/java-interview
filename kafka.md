@@ -188,6 +188,12 @@
 * **Error handling**: Продюсер обрабатывает ошибки при отправке сообщений. В зависимости от настроек продюсер может 
 попытаться переотправить сообщение или сообщить о проблеме через callback
 
+### Резюме
+
+* Продюсер выбирает партицию для сообщения
+* Продюсер выбирает уровень гарантии доставки
+* В продюсере можно тюнить производительность
+
 ### Настройки продюсера
 
 #### Bootstrap-серверы (`bootstrap.servers`)
@@ -240,18 +246,30 @@
   * **Зачем это нужно**: Сжатие уменьшает объем данных, передаваемых по сети, что может снизить нагрузку на сеть и хранилище, 
 особенно при больших объемах сообщений. Однако это может потребовать дополнительных ресурсов на сжатие/разжатие
 
+#### Распределение сообщений по партициям (партицирование)
+
+* **partitioner.class**
+  * **Описание**: определяет логику, по которой продюсер выбирает партицию для каждого сообщения
+  * **Примеры**:
+    * **если настройка не задана**, по умолчанию используется `DefaultPartitioner` , который может распределять сообщения по партициям 
+равномерно или на основе ключа сообщения
+    * `partitioner.class: o.a.k.clients.producer.RoundRobinPartitioner` использует метод Round Robin для распределения сообщений
+    * `partitioner.class: o.a.k.clients.producer.UniformStickyPartitioner` равномерно отправляет сообщения, привязываясь 
+к партиции на короткий промежуток времени, чтобы уменьшить нагрузку на брокеры
+
 #### Подтверждения (acks)
    
 Настройка определяет, как много брокеров должны подтвердить получение сообщения перед тем, как продюсер будет считать его 
 успешно отправленным
 
-* **Описание**: Определяет количество подтверждений от брокеров
-* **Значения**:
-  * `0`: Продюсер не ждёт подтверждений (самая быстрая отправка, но высокий риск потери сообщений)
-  * `1`: Продюсер ждёт подтверждения от лидера партиции
-  * `all` (или `-1`): Продюсер ждёт подтверждений от всех реплик (наибольшая надежность, но увеличенные задержки)
-* **Пример**: `acks: all`
-* **Зачем это нужно**: Позволяет выбрать баланс между скоростью и надежностью отправки данных.
+* **acks**
+  * **Описание**: Определяет количество подтверждений от брокеров
+  * **Значения**:
+    * `0`: Продюсер не ждёт подтверждений (самая быстрая отправка, но высокий риск потери сообщений)
+    * `1`: Продюсер ждёт подтверждения от лидера партиции
+    * `all` (или `-1`): Продюсер ждёт подтверждений от всех реплик (наибольшая надежность, но увеличенные задержки)
+  * **Пример**: `acks: all`
+  * **Зачем это нужно**: Позволяет выбрать баланс между скоростью и надежностью отправки данных.
 
 #### Дополнительные важные настройки
 
@@ -272,3 +290,215 @@
   * **Описание**: Максимальное время ожидания подтверждения от брокера
   * **Пример**: `request.timeout.ms: 30000` (30 секунд)
   * **Зачем это нужно**: Помогает избежать бесконечного ожидания ответа от брокера в случае его сбоя
+
+### Пример конфигурации Kafka Producer
+
+```java
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import java.util.Properties;
+
+public class KafkaStringArrayProducer {
+    
+    public static void main(String[] args) {
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        KafkaProducer<String, String[]> producer = new KafkaProducer<>(props);
+
+        String key = "user123";
+        String[] value = {"message1", "message2", "message3"};
+
+        ProducerRecord<String, String> record = new ProducerRecord<>("my_topic", key, value);
+        record.headers().add("traceId", "someTraceId");
+
+        producer.send(record, (metadata, exception) -> {
+            if (exception != null) {
+                System.out.println("Ошибка при отправке сообщения: " + exception.getMessage());
+            } else {
+                System.out.println("Сообщение отправлено в топик " + metadata.topic() + " с партицией " + metadata.partition());
+            }
+        });
+
+        producer.close();
+    }
+}
+```
+
+```properties
+acks=all
+retries=3
+compression.type=gzip
+```
+
+#### С использованием Spring Kafka
+
+```java
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.config.ConcurrentMessageListenerContainer;
+import org.springframework.kafka.listener.MessageListenerContainer;
+import org.springframework.kafka.producer.Producer;
+import org.springframework.kafka.producer.ProducerRecord;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Configuration
+public class KafkaProducerConfig {
+    
+    @Autowired
+    private KafkaProperties kafkaProperties;
+
+    @Bean
+    public Map<String, Object> producerConfigs() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getServer());
+        props.put(ProducerConfig.CLIENT_ID_CONFIG, kafkaProperties.getProducerId());
+        props.put(
+                ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, 
+                "com.example.configuration.kafka.KafkaProducerLoggingInterceptor"
+        );
+        
+        if ("SASL_SSL".equals(kafkaProperties.getSecurityProtocol())) {
+            props.put("ssl.truststore.location", kafkaProperties.getSslTrustStoreLocation());
+            props.put("ssl.truststore.password", kafkaProperties.getSslTrustStorePassword());
+            props.put("ssl.truststore.type", kafkaProperties.getSslTrustStoreType());
+            props.put("ssl.keystore.type", kafkaProperties.getSslKeyStoreType());
+          
+            props.put("sasl.mechanism", kafkaProperties.getSaslMechanism());
+            props.put("security.protocol", kafkaProperties.getSecurityProtocol());
+            props.put("sasl.jaas.config", kafkaProperties.getJaasConfigCompiled());
+        }
+        
+        return props;
+    }
+  
+    @Bean
+    public ProducerFactory<String, String> producerFactory() {
+        var stringSerializerKey = new StringSerializer();
+        stringSerializerKey.configure(Map.of("key.serializer.encoding", "UTF-8"), true);
+        stringSerializerKey.configure(Map.of("serializer.encoding", "UTF-8"), true);
+    
+        var stringSerializerValue = new StringSerializer();
+        stringSerializerValue.configure(Map.of("value.serializer.encoding", "UTF-8"), false);
+        stringSerializerValue.configure(Map.of("serializer.encoding", "UTF-8"), false);
+    
+        return new DefaultKafkaProducerFactory<>(producerConfigs(), stringSerializerKey, stringSerializerValue);
+    }
+  
+    @Bean
+    public KafkaTemplate<String, String> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
+    }
+}
+```
+
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+public class KafkaProducerService {
+    
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    public KafkaProducerService(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void sendMessage(String message, String key, String topic) {
+      try {
+        log.info("Sending message {}", data);
+        kafkaTemplate.send(topic, key, message);
+        log.info("Successfully send message {}", data);
+      } catch (Exception ex) {
+        log.error("Failed send message to {} topic by key {}", key, topic);
+        throw ex;
+      }
+    }
+}
+```
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/kafka")
+public class KafkaController {
+
+    @Autowired
+    private KafkaProducerService kafkaProducerService;
+
+    @PostMapping("/send")
+    public String sendMessage(@RequestParam String message, @RequestParam String key, @RequestParam String topic) {
+        kafkaProducerService.sendMessage(message, key, topic);
+        return "Message sent to Kafka!";
+    }
+}
+```
+
+#### С использованием Spring Cloud Stream 
+
+```yaml
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: my_topic
+      kafka:
+        binder:
+          brokers: localhost:9092
+```
+
+```java
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.integration.support.MessageBuilder;
+import org.springframework.messaging.Message;
+import org.springframework.stereotype.Service;
+
+@Service
+@EnableBinding(Source.class)
+public class KafkaStreamProducer {
+
+    private final Source source;
+
+    public KafkaStreamProducer(Source source) {
+        this.source = source;
+    }
+
+    public void sendMessage(String message) {
+        Message<String> msg = MessageBuilder.withPayload(message).build();
+        source.output().send(msg);
+    }
+}
+```
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/kafka-stream")
+public class KafkaStreamController {
+
+    @Autowired
+    private KafkaStreamProducer kafkaStreamProducer;
+
+    @PostMapping("/send")
+    public String sendMessage(@RequestParam String message) {
+        kafkaStreamProducer.sendMessage(message);
+        return "Message sent to Kafka via Spring Cloud Stream!";
+    }
+}
+```
