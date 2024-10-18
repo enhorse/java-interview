@@ -827,6 +827,13 @@
 * [Для чего нужен Streams DSL?](kafka.md#для-чего-нужен-streams-dsl)
 * [Как Kafka обеспечивает версионирование сообщений?](kafka.md#как-kafka-обеспечивает-версионирование-сообщений)
 
+**Сравнение с другими системами**
+
+* [В чем разница между Kafka Streams и Apache Flink?](kafka.md#в-чем-разница-между-kafka-streams-и-apache-flink)
+* [В чем разница между Kafka Consumer и Kafka Stream?](kafka.md#в-чем-разница-между-kafka-consumer-и-kafka-stream)
+* [В чем разница между Kafka и Flume?](kafka.md#в-чем-разница-между-kafka-и-flume)
+* [В чем разница между Kafka и RabbitMQ?](kafka.md#в-чем-разница-между-kafka-и-rabbitmq)
+
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
 ## Источники
