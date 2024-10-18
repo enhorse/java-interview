@@ -778,6 +778,9 @@
 
 * [Что такое Apache Kafka?](kafka.md#что-такое-apache-kafka)
 * [Основные компоненты Kafka](kafka.md#основные-компоненты-kafka)
+
+**Архитектура компонентов**
+
 * Topic
   * [Архитектура топика](kafka.md#архитектура-топика)
   * [Настройки топика Kafka](kafka.md#настройки-топика-kafka)
@@ -792,6 +795,37 @@
   * [Архитектура консюмера](kafka.md#архитектура-консюмера)
   * [Настройки консюмера](kafka.md#настройки-консюмера)
   * [Пример конфигурации Kafka Consumer](kafka.md#пример-конфигурации-kafka-consumer)
+
+**Kafka API**
+
+* [Основные API Kafka](kafka.md#основные-api-kafka)
+* [Какова роль Producer API?](kafka.md#какова-роль-producer-api)
+* [Какова роль Consumer API?](kafka.md#какова-роль-consumer-api)
+* [Какова роль Connector API?](kafka.md#какова-роль-connector-api)
+* [Какова роль Streams API?](kafka.md#какова-роль-streams-api)
+* [Какова роль Transactions API?](kafka.md#какова-роль-transactions-api)
+* [Какова роль Quota API?](kafka.md#какова-роль-quota-api)
+* [Какова роль AdminClient API?](kafka.md#какова-роль-AdminClient-api)
+
+**Kafka Consumer**
+
+* [Для чего нужен координатор группы?](kafka.md#для-чего-нужен-координатор-группы)
+* [Для чего нужен Consumer heartbeat thread?](kafka.md#для-чего-нужен-consumer-heartbeat-thread)
+* [Как Kafka обрабатывает сообщения?](kafka.md#как-kafka-обрабатывает-сообщения)
+* [Как Kafka обрабатывает задержку консюмера?](kafka.md#как-kafka-обрабатывает-задержку-консюмера)
+* [Для чего нужны методы subscribe() и poll()?](kafka.md#для-чего-нужны-методы-subscribe-и-poll)
+* [Для чего нужен метод position()?](kafka.md#для-чего-нужен-метод-position)
+* [Для чего нужны методы commitSync() и commitAsync()?](kafka.md#для-чего-нужны-методы-commitsync-и-commitasync)
+
+**Другие вопросы**
+
+* [Для чего нужен идемпотентный продюсер?](kafka.md#для-чего-нужен-идемпотентный-продюсер)
+* [Для чего нужен интерфейс Partitioner?](kafka.md#для-чего-нужен-интерфейс-partitioner)
+* [Для чего нужен Broker log cleaner thread?](kafka.md#для-чего-нужен-broker-log-cleaner-thread)
+* [Для чего нужен Kafka Mirror Maker?](kafka.md#для-чего-нужен-kafka-mirror-maker)
+* [Для чего нужна Schema Registry?](kafka.md#для-чего-нужна-schema-registry)
+* [Для чего нужен Streams DSL?](kafka.md#для-чего-нужен-streams-dsl)
+* [Как Kafka обеспечивает версионирование сообщений?](kafka.md#как-kafka-обеспечивает-версионирование-сообщений)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
