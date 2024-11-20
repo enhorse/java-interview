@@ -11,6 +11,7 @@
 + [Потоки ввода-вывода в Java](#Потоки-вводавывода-в-java) ![icon][done]
 + [Сериализация](#Сериализация) ![icon][done]
 + [Многопоточность](#Многопоточность) ![icon][done]
++ [Реактивное программирование](#реактивное-программирование) ![icon][done]
 + [Servlets, JSP, JSTL](#servlets-jsp-jstl) ![icon][done]
 + [Базы данных](#Базы-данных) ![icon][done]
 + [SQL](#sql) ![icon][done]
@@ -24,6 +25,7 @@
 + [Основы CSS](#Основы-css) ![icon][done]
 + [Основы Web](#Основы-web) ![icon][done]
 + [Дополнительные материалы](#Дополнительные-материалы) ![icon][done]
++ [Apache Kafka](#apache-kafka) ![icon][done]
 
 [done]:done.png
 
@@ -445,6 +447,20 @@
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
+## Реактивное программирование
+
+* [Что такое реактивное программирование и чем оно отличается от процедурного программирования?](reactive.md#что-такое-реактивное-программирование-и-чем-оно-отличается-от-процедурного-программирования)
+* [Объясните концепцию потоков данных в реактивном программировании](reactive.md#объясните-концепцию-потоков-данных-в-реактивном-программировании)
+* [Что такое паттерн Observer и как он лежит в основе реактивного программирования?](reactive.md#что-такое-паттерн-observer-и-как-он-лежит-в-основе-реактивного-программирования)
+* [Опишите роль Observable и Observer в реактивном программировании](reactive.md#опишите-роль-observable-и-observer-в-реактивном-программировании)
+* [Что такое backpressure в контексте реактивного программирования?](reactive.md#что-такое-backpressure-в-контексте-реактивного-программирования)
+* [Объясните разницу между Hot и Cold Observable](reactive.md#объясните-разницу-между-hot-и-cold-observable)
+* [Какова роль Подписки в реактивном программировании?](reactive.md#какова-роль-подписки-в-реактивном-программировании)
+* [Как отписаться от потока для предотвращения утечки памяти?](reactive.md#как-отписаться-от-потока-для-предотвращения-утечки-памяти)
+* [Какие есть операторы в Project Reactor и для чего они используются?](reactive.md#какие-есть-операторы-в-project-reactor-и-для-чего-они-используются)
+
+[к оглавлению](#Вопросы-для-собеседования-на-java-developer)
+
 ## Servlets, JSP, JSTL
 + [Что такое _«сервлет»_?](servlets.md#Что-такое-сервлет)
 + [В чем заключаются преимущества технологии сервлетов над CGI (Common Gateway Interface)?](servlets.md#В-чем-заключаются-преимущества-технологии-сервлетов-над-cgi-common-gateway-interface)
@@ -755,6 +771,69 @@
 + [Top Spring Framework Interview Questions](https://www.baeldung.com/spring-interview-questions)
 + [Spring Interview Questions](https://www.interviewbit.com/spring-interview-questions/)
 + [Hibernate Interview Questions](https://www.adaface.com/blog/hibernate-interview-questions/)
+
+[к оглавлению](#Вопросы-для-собеседования-на-java-developer)
+
+## Apache Kafka
+
+* [Что такое Apache Kafka?](kafka.md#что-такое-apache-kafka)
+* [Основные компоненты Kafka](kafka.md#основные-компоненты-kafka)
+
+**Архитектура компонентов**
+
+* Topic
+  * [Архитектура топика](kafka.md#архитектура-топика)
+  * [Настройки топика Kafka](kafka.md#настройки-топика-kafka)
+* Broker
+  * [Архитектура брокера](kafka.md#архитектура-брокера)
+  * [Настройки брокера Kafka](kafka.md#настройки-брокера-kafka)
+* Producer
+  * [Архитектура продюсера](kafka.md#архитектура-продюсера)
+  * [Настройки продюсера](kafka.md#настройки-продюсера)
+  * [Пример конфигурации Kafka Producer](kafka.md#пример-конфигурации-kafka-producer)
+* Consumer
+  * [Архитектура консюмера](kafka.md#архитектура-консюмера)
+  * [Настройки консюмера](kafka.md#настройки-консюмера)
+  * [Пример конфигурации Kafka Consumer](kafka.md#пример-конфигурации-kafka-consumer)
+
+**Kafka API**
+
+* [Основные API Kafka](kafka.md#основные-api-kafka)
+* [Какова роль Producer API?](kafka.md#какова-роль-producer-api)
+* [Какова роль Consumer API?](kafka.md#какова-роль-consumer-api)
+* [Какова роль Connector API?](kafka.md#какова-роль-connector-api)
+* [Какова роль Streams API?](kafka.md#какова-роль-streams-api)
+* [Какова роль Transactions API?](kafka.md#какова-роль-transactions-api)
+* [Какова роль Quota API?](kafka.md#какова-роль-quota-api)
+* [Какова роль AdminClient API?](kafka.md#какова-роль-AdminClient-api)
+
+**Kafka Consumer**
+
+* [Для чего нужен координатор группы?](kafka.md#для-чего-нужен-координатор-группы)
+* [Для чего нужен Consumer heartbeat thread?](kafka.md#для-чего-нужен-consumer-heartbeat-thread)
+* [Как Kafka обрабатывает сообщения?](kafka.md#как-kafka-обрабатывает-сообщения)
+* [Как Kafka обрабатывает задержку консюмера?](kafka.md#как-kafka-обрабатывает-задержку-консюмера)
+* [Для чего нужны методы subscribe() и poll()?](kafka.md#для-чего-нужны-методы-subscribe-и-poll)
+* [Для чего нужен метод position()?](kafka.md#для-чего-нужен-метод-position)
+* [Для чего нужны методы commitSync() и commitAsync()?](kafka.md#для-чего-нужны-методы-commitsync-и-commitasync)
+
+**Другие вопросы**
+
+* [Для чего нужен идемпотентный продюсер?](kafka.md#для-чего-нужен-идемпотентный-продюсер)
+* [Для чего нужен интерфейс Partitioner?](kafka.md#для-чего-нужен-интерфейс-partitioner)
+* [Для чего нужен Broker log cleaner thread?](kafka.md#для-чего-нужен-broker-log-cleaner-thread)
+* [Для чего нужен Kafka Mirror Maker?](kafka.md#для-чего-нужен-kafka-mirror-maker)
+* [Для чего нужна Schema Registry?](kafka.md#для-чего-нужна-schema-registry)
+* [Для чего нужен Streams DSL?](kafka.md#для-чего-нужен-streams-dsl)
+* [Как Kafka обеспечивает версионирование сообщений?](kafka.md#как-kafka-обеспечивает-версионирование-сообщений)
+* [Как потребители получают сообщения от брокера?](kafka.md#как-потребители-получают-сообщения-от-брокера)
+
+**Сравнение с другими компонентами и системами**
+
+* [В чем разница между Kafka Consumer и Kafka Stream?](kafka.md#в-чем-разница-между-kafka-consumer-и-kafka-stream)
+* [В чем разница между Kafka Streams и Apache Flink?](kafka.md#в-чем-разница-между-kafka-streams-и-apache-flink)
+* [В чем разница между Kafka и Flume?](kafka.md#в-чем-разница-между-kafka-и-flume)
+* [В чем разница между Kafka и RabbitMQ?](kafka.md#в-чем-разница-между-kafka-и-rabbitmq)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
