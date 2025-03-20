@@ -26,7 +26,7 @@
 + [Основы Web](#Основы-web) ![icon][done]
 + [Apache Kafka](#apache-kafka) ![icon][done]
 + [Дополнительные материалы](#Дополнительные-материалы) ![icon][done]
-+ [Hibernate](#Hibernate) ![icon][done]
++ [Hibernate](hibernate) ![icon][done]
 
 [done]:done.png
 
