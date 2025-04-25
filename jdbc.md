@@ -190,9 +190,9 @@ __Уровень изолированности транзакций__ — зн�
 
 Объекты-носители интерфейсов создаются при помощи методов объекта `java.sql.Connection`:
 
-+ `java.sql.createStatement()` возвращает объект _Statement_;
-+ `java.sql.prepareStatement()` возвращает объект _PreparedStatement_;
-+ `java.sql.prepareCall()` возвращает объект _CallableStatement_;
++ `java.sql.Connection.createStatement()` возвращает объект _Statement_;
++ `java.sql.Connection.prepareStatement()` возвращает объект _PreparedStatement_;
++ `java.sql.Connection.prepareCall()` возвращает объект _CallableStatement_;
 
 [к оглавлению](#jdbc)
 
