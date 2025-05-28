@@ -834,7 +834,6 @@
 + [Top Spring Framework Interview Questions](https://www.baeldung.com/spring-interview-questions)
 + [Spring Interview Questions](https://www.interviewbit.com/spring-interview-questions/)
 + [Hibernate Interview Questions](https://www.adaface.com/blog/hibernate-interview-questions/)
-+ [Hibernate Interview Questions](https://www.adaface.com/blog/hibernate-interview-questions/)
 + [Java Interview Questions](https://labex.io/interview-questions/java)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
