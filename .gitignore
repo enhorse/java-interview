@@ -8,3 +8,5 @@ out/
 
 # Maven
 target/
+
+book/.obsidian/

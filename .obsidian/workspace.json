@@ -1,0 +1,192 @@
+{
+  "main": {
+    "id": "1213f8bd80bf2a6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "e572ebd09f07e667",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bd0d523560f29c0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "28283205ed5addad",
+    "type": "split",
+    "children": [
+      {
+        "id": "969d98304f3c026c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7713ee83e00bfc24",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6b930273c404abf7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "91d4121b745edb01",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "48791619f4cf898a",
+    "type": "split",
+    "children": [
+      {
+        "id": "5142492551b81818",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce0bfea472ecbb76",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "oop.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for oop"
+            }
+          },
+          {
+            "id": "c09aa375f8a025fe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "oop.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from oop"
+            }
+          },
+          {
+            "id": "3826abae807dba1b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "66a4b91db0060eea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "oop.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of oop"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "8bd0d523560f29c0",
+  "lastOpenFiles": [
+    "web.md",
+    "servlets.md",
+    "book/grokking-the-java-interview.pdf",
+    "book/clean_code.pdf",
+    "book/Spring Start Here.pdf",
+    "book/Software Testing Strategies.pdf",
+    "book/OCP17Full.pdf",
+    "book/Kabanchik - Design Data Intensive.pdf",
+    "book/Joshua Bloch - Effective Java (3rd) - 2018.pdf",
+    "book/Java_questions.pdf",
+    "book/JavaCompleteReference.pdf",
+    "book/How to Test a Time Machine.pdf",
+    "kafka.md",
+    "OOP.md",
+    "README.md",
+    "patterns.md",
+    "Collections.md",
+    "Concurrency.md",
+    "db.md",
+    "done.png",
+    "jdbc.md",
+    "java8.md"
+  ]
+}
